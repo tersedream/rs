@@ -1,0 +1,110 @@
+2022-03-09 10:39:21.521 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-09 10:39:21.523 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 11812 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-09 10:39:21.525 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-09 10:39:21.691 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-09 10:39:21.691 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-09 10:39:23.087 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-09 10:39:23.092 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-09 10:39:23.131 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-03-09 10:39:24.562 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-09 10:39:24.577 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-09 10:39:24.578 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-09 10:39:24.579 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 10:39:24.673 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-09 10:39:24.673 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2981 ms
+2022-03-09 10:39:24.802 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-09 10:39:25.332 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:39:26.841 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:39:26.842 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:39:28.000 [restartedMain] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0cdd5307-3c4c-439c-a749-d3012177f7ae
+
+2022-03-09 10:39:28.256 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-03-09 10:39:28.439 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-09 10:39:28.506 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-09 10:39:28.533 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-09 10:39:28.536 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-09 10:39:28.641 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1c1d2210:0/SimpleConnection@6e61d264 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 59609]
+2022-03-09 10:39:28.706 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 7.767 seconds (JVM running for 9.474)
+2022-03-09 10:39:28.726 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-03-09 10:39:29.050 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-03-09 10:41:13.355 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 10:41:13.356 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-09 10:41:13.358 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-03-09 10:55:58.479 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-09 10:55:59.211 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-09 10:55:59.223 [Thread-5] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-09 10:55:59.523 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-03-09 10:55:59.539 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-03-09 10:55:59.760 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 11812 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-09 10:55:59.761 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-09 10:56:00.231 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-09 10:56:00.231 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-09 10:56:00.243 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-03-09 10:56:00.571 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-09 10:56:00.572 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-09 10:56:00.572 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-09 10:56:00.573 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 10:56:00.605 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-09 10:56:00.605 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 837 ms
+2022-03-09 10:56:00.689 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-09 10:56:01.276 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:56:01.635 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:56:01.636 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:56:02.021 [restartedMain] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9904f05f-5d5b-4a78-95f4-e995ae0b506f
+
+2022-03-09 10:56:02.090 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-03-09 10:56:02.182 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-09 10:56:02.192 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-09 10:56:02.196 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-09 10:56:02.197 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-09 10:56:02.210 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#515dd7b:0/SimpleConnection@3f1d452b [delegate=amqp://guest@127.0.0.1:5672/, localPort= 55830]
+2022-03-09 10:56:02.220 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 2.511 seconds (JVM running for 1002.988)
+2022-03-09 10:56:02.220 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2022-03-09 10:56:02.226 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2022-03-09 10:56:02.249 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2022-03-09 10:56:03.621 [Thread-7] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-09 10:56:04.239 [Thread-7] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-09 10:56:04.248 [Thread-7] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-09 10:56:04.479 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2022-03-09 10:56:04.488 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2022-03-09 10:56:04.701 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 11812 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-09 10:56:04.702 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-09 10:56:05.053 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-09 10:56:05.053 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-09 10:56:05.060 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2022-03-09 10:56:05.431 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-09 10:56:05.432 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-09 10:56:05.432 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-09 10:56:05.432 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 10:56:05.453 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-09 10:56:05.453 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 747 ms
+2022-03-09 10:56:05.504 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-09 10:56:05.532 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:56:05.982 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:56:05.982 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-03-09 10:56:06.523 [restartedMain] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0dd0b3a6-121d-41a9-9042-d699e83c533a
+
+2022-03-09 10:56:06.621 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-03-09 10:56:06.747 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-09 10:56:06.761 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-09 10:56:06.769 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-09 10:56:06.772 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-09 10:56:06.789 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#341fcafb:0/SimpleConnection@55f9b829 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 55855]
+2022-03-09 10:56:06.799 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 2.142 seconds (JVM running for 1007.567)
+2022-03-09 10:56:06.799 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2022-03-09 10:56:06.801 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2022-03-09 10:56:06.827 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2022-03-09 10:56:07.134 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 10:56:07.135 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-09 10:56:07.136 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-03-09 12:22:25.547 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-09 12:22:26.334 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-09 12:22:26.350 [SpringApplicationShutdownHook] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-09 12:22:26.624 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2022-03-09 12:22:26.644 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.

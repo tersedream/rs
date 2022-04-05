@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.rs.dao.ResourceLogMapper">
+
+    <select id="getAllResourceLogs" resultMap="ResourceLog">
+        SELECT * FROM `resource_update_log`
+    </select>
+    <resultMap id="ResourceLog" type="ResourceLog">
+        <association select="com.example.rs.dao.ResourceMapper.getResourceById"
+                     property="resource"
+                     column="resource_id"
+                     fetchType="lazy">
+        </association>
+    </resultMap>
+
+    <insert id="insertResourceLog" parameterType="ResourceLog">
+        INSERT INTO `resource_update_log`
+        VALUES (null, #{resource.id}, #{versionNumber}, #{path}, #{htmlInfo}, #{infoTitle}, #{currVersion}, #{date})
+    </insert>
+
+    <delete id="deleteResourceLog" parameterType="Resource">
+        update `resource`
+        <trim>
+
+        </trim>
+    </delete>
+</mapper>

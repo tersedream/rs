@@ -1,0 +1,1107 @@
+2022-03-03 11:12:08.528 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 1828 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:12:08.530 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:12:08.545 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:12:10.249 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:12:10.254 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:12:10.308 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:12:15.787 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:12:15.876 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#c97721b:0/SimpleConnection@6cc44207 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62830]
+2022-03-03 11:12:15.945 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] WARN  o.s.amqp.rabbit.listener.BlockingQueueConsumer - Failed to declare queue: Queue1
+2022-03-03 11:12:15.948 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] WARN  o.s.amqp.rabbit.listener.BlockingQueueConsumer - Queue declaration failed; retries left=3
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[Queue1]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:743)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:620)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:607)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1350)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1157)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.queueDeclarePassive(Unknown Source)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:721)
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141)
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517)
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739)
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666)
+	... 1 common frames omitted
+2022-03-03 11:12:20.958 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] WARN  o.s.amqp.rabbit.listener.BlockingQueueConsumer - Failed to declare queue: Queue1
+2022-03-03 11:12:20.959 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] WARN  o.s.amqp.rabbit.listener.BlockingQueueConsumer - Queue declaration failed; retries left=2
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[Queue1]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:743)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:620)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:607)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1350)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1157)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.queueDeclarePassive(Unknown Source)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:721)
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141)
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517)
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739)
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666)
+	... 1 common frames omitted
+2022-03-03 11:12:25.982 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] WARN  o.s.amqp.rabbit.listener.BlockingQueueConsumer - Failed to declare queue: Queue1
+2022-03-03 11:12:25.983 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] WARN  o.s.amqp.rabbit.listener.BlockingQueueConsumer - Queue declaration failed; retries left=1
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[Queue1]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:743)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:620)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:607)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1350)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1157)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.queueDeclarePassive(Unknown Source)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:721)
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141)
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517)
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739)
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666)
+	... 1 common frames omitted
+2022-03-03 11:12:30.993 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] WARN  o.s.amqp.rabbit.listener.BlockingQueueConsumer - Failed to declare queue: Queue1
+2022-03-03 11:12:30.994 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] ERROR o.s.a.r.listener.SimpleMessageListenerContainer - Consumer threw missing queues exception, fatal=true
+org.springframework.amqp.rabbit.listener.QueuesNotAvailableException: Cannot prepare queue for listener. Either the queue doesn't exist or the broker will not allow us to use it.
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.handleDeclarationException(BlockingQueueConsumer.java:693)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:627)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:607)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1350)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[Queue1]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:743)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:620)
+	... 4 common frames omitted
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1157)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.queueDeclarePassive(Unknown Source)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:721)
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141)
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517)
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739)
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666)
+	... 1 common frames omitted
+2022-03-03 11:12:30.997 [main] WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.amqp.rabbit.config.internalRabbitListenerEndpointRegistry'; nested exception is org.springframework.amqp.AmqpIllegalStateException: Fatal exception on listener startup
+2022-03-03 11:12:31.000 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] ERROR o.s.a.r.listener.SimpleMessageListenerContainer - Stopping container from aborted consumer
+2022-03-03 11:12:31.001 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:12:31.001 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:12:31.050 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-03 11:12:31.078 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.amqp.rabbit.config.internalRabbitListenerEndpointRegistry'; nested exception is org.springframework.amqp.AmqpIllegalStateException: Fatal exception on listener startup
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.amqp.AmqpIllegalStateException: Fatal exception on listener startup
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.waitForConsumersToStart(SimpleMessageListenerContainer.java:601)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doStart(SimpleMessageListenerContainer.java:561)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:1387)
+	at org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistry.startIfNecessary(RabbitListenerEndpointRegistry.java:289)
+	at org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistry.start(RabbitListenerEndpointRegistry.java:239)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 84 common frames omitted
+Caused by: org.springframework.amqp.rabbit.listener.QueuesNotAvailableException: Cannot prepare queue for listener. Either the queue doesn't exist or the broker will not allow us to use it.
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.handleDeclarationException(BlockingQueueConsumer.java:693)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:627)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:607)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1350)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[Queue1]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:743)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:620)
+	... 4 common frames omitted
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1157)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.queueDeclarePassive(Unknown Source)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:721)
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141)
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517)
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739)
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666)
+	... 1 common frames omitted
+2022-03-03 11:12:31.088 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@51133c06] to prepare test instance [com.example.rs.RsApplicationTests@42805abe]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.amqp.rabbit.config.internalRabbitListenerEndpointRegistry'; nested exception is org.springframework.amqp.AmqpIllegalStateException: Fatal exception on listener startup
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 71 common frames omitted
+Caused by: org.springframework.amqp.AmqpIllegalStateException: Fatal exception on listener startup
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.waitForConsumersToStart(SimpleMessageListenerContainer.java:601)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doStart(SimpleMessageListenerContainer.java:561)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:1387)
+	at org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistry.startIfNecessary(RabbitListenerEndpointRegistry.java:289)
+	at org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistry.start(RabbitListenerEndpointRegistry.java:239)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 84 common frames omitted
+Caused by: org.springframework.amqp.rabbit.listener.QueuesNotAvailableException: Cannot prepare queue for listener. Either the queue doesn't exist or the broker will not allow us to use it.
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.handleDeclarationException(BlockingQueueConsumer.java:693)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:627)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:607)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1350)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[Queue1]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:743)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:620)
+	... 4 common frames omitted
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012)
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1157)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.queueDeclarePassive(Unknown Source)
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:721)
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141)
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'Queue1' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517)
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739)
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666)
+	... 1 common frames omitted
+2022-03-03 11:13:30.294 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 17832 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:13:30.296 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:13:30.309 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:13:31.521 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:13:31.525 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:13:31.564 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:13:36.324 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:13:36.392 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#35d7386b:0/SimpleConnection@76104df5 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62870]
+2022-03-03 11:13:36.496 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 6.907 seconds (JVM running for 8.395)
+2022-03-03 11:13:37.193 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:13:37.492 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:14:26.447 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 19320 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:14:26.450 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:14:26.473 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:14:27.670 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:14:27.675 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:14:27.711 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:14:32.524 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:14:32.616 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#6568f998:0/SimpleConnection@4e9bd2c8 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62881]
+2022-03-03 11:14:32.699 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 6.921 seconds (JVM running for 8.257)
+2022-03-03 11:14:33.388 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:14:34.395 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:17:02.151 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:17:02.167 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 18436 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:17:02.168 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:17:02.244 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-03 11:17:02.244 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-03 11:17:03.087 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:17:03.089 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:17:03.116 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:17:04.438 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-03 11:17:04.456 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-03 11:17:04.458 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-03 11:17:04.458 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-03 11:17:04.566 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-03 11:17:04.567 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2322 ms
+2022-03-03 11:17:04.720 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-03 11:17:07.513 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-03 11:17:07.576 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-03 11:17:07.605 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 11:17:07.605 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:17:07.666 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#491e4a0d:0/SimpleConnection@fcf301b [delegate=amqp://guest@127.0.0.1:5672/, localPort= 63036]
+2022-03-03 11:17:07.741 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 6.169 seconds (JVM running for 6.887)
+2022-03-03 11:50:19.663 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:50:20.392 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:50:20.418 [Thread-5] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-03 11:50:20.994 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 18436 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:50:21.006 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:50:22.585 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:50:22.586 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:50:22.897 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 310 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:50:23.141 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-03 11:50:23.141 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-03 11:50:23.141 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-03 11:50:23.141 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-03 11:50:23.202 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-03 11:50:23.202 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2150 ms
+2022-03-03 11:50:23.228 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-03 11:50:23.967 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-03 11:50:23.983 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-03 11:50:23.991 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 11:50:24.006 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 3.469 seconds (JVM running for 2003.152)
+2022-03-03 11:50:24.010 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2022-03-03 11:50:25.436 [Thread-7] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-03 11:50:25.585 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 18436 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:50:25.585 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:50:26.359 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:50:26.361 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:50:26.376 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:50:26.790 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-03 11:50:26.812 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-03 11:50:26.812 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-03 11:50:26.812 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-03 11:50:26.843 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-03 11:50:26.843 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1258 ms
+2022-03-03 11:50:26.879 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-03 11:50:27.450 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'QQSenderMailService': Unsatisfied dependency expressed through field 'javaMailSender'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.mail.javamail.JavaMailSender' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2022-03-03 11:50:27.451 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2022-03-03 11:50:27.452 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-03 11:50:27.461 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-03 11:50:27.512 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field javaMailSender in com.example.rs.service.QQSenderMailService required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2022-03-03 11:50:28.514 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 17060 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:50:28.516 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:50:28.545 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:50:29.552 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:50:29.556 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:50:29.589 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:50:34.347 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:50:34.415 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#783b3aa0:0/SimpleConnection@87f6ab5 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64361]
+2022-03-03 11:50:34.496 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 6.622 seconds (JVM running for 9.177)
+2022-03-03 11:50:36.357 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:50:36.495 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:51:33.432 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 15128 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:51:33.434 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:51:33.457 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:51:34.821 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:51:34.827 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:51:34.867 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:51:40.083 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:51:40.167 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#5463f035:0/SimpleConnection@4a3bf37c [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64387]
+2022-03-03 11:51:40.248 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 7.649 seconds (JVM running for 9.451)
+2022-03-03 11:51:40.941 [main] ERROR com.example.rs.control.A - 带有附件的邮件发送失败。begin -1, end 7, length 7
+2022-03-03 11:51:40.971 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:51:41.246 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:52:21.429 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 14156 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:52:21.431 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:52:21.442 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:52:22.436 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:52:22.441 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:52:22.476 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:52:27.040 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:52:27.109 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#44fd7ba4:0/SimpleConnection@328e50eb [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64399]
+2022-03-03 11:52:27.259 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 6.313 seconds (JVM running for 7.834)
+2022-03-03 11:52:28.004 [main] ERROR com.example.rs.control.A - 带有附件的邮件发送失败。begin -1, end 9, length 9
+2022-03-03 11:52:28.036 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:52:28.254 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:52:50.950 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 9628 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:52:50.951 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:52:50.967 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:52:52.187 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:52:52.192 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:52:52.231 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:52:57.177 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:52:57.264 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#22f8adc2:0/SimpleConnection@ea84346 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64406]
+2022-03-03 11:52:57.352 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 7.061 seconds (JVM running for 8.735)
+2022-03-03 11:52:58.043 [main] ERROR com.example.rs.control.A - 带有附件的邮件发送失败。begin -1, end 10, length 10
+2022-03-03 11:52:58.075 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:52:58.344 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:53:25.722 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 1524 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:53:25.727 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:53:25.752 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:53:27.021 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:53:27.027 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:53:27.066 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:53:32.968 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:53:33.118 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f213a2:0/SimpleConnection@2e030cc1 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64417]
+2022-03-03 11:53:33.236 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 8.21 seconds (JVM running for 10.454)
+2022-03-03 11:54:25.785 [main] ERROR com.example.rs.control.A - 带有附件的邮件发送失败。begin -1, end 10, length 10
+2022-03-03 11:54:25.818 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:54:26.783 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:55:07.197 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 12740 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:55:07.199 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:55:07.212 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:55:08.323 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:55:08.331 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:55:08.367 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:55:13.909 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:55:14.008 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f213a2:0/SimpleConnection@126a9a77 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64433]
+2022-03-03 11:55:14.085 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 7.531 seconds (JVM running for 9.426)
+2022-03-03 11:55:28.627 [main] ERROR com.example.rs.control.A - 带有附件的邮件发送失败。Failed messages: javax.mail.MessagingException: IOException while sending message;
+  nested exception is:
+	java.io.FileNotFoundException: \mcmmo.jar
+2022-03-03 11:56:09.565 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:56:10.549 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:56:17.502 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 15448 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:56:17.505 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:56:17.521 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:56:18.894 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:56:18.900 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:56:18.944 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:56:24.686 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:56:24.771 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f213a2:0/SimpleConnection@29ee8174 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64444]
+2022-03-03 11:56:24.881 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 8.2 seconds (JVM running for 10.311)
+2022-03-03 11:56:39.435 [main] INFO  com.example.rs.control.A - 邮件发送成功
+2022-03-03 11:56:41.148 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:56:42.128 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:59:01.957 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 276 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:59:01.959 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:59:01.973 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:59:03.089 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:59:03.092 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:59:03.135 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2022-03-03 11:59:08.452 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 11:59:08.541 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#5f193335:0/SimpleConnection@69cc49ec [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64503]
+2022-03-03 11:59:08.625 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 7.192 seconds (JVM running for 9.015)
+2022-03-03 11:59:13.091 [main] INFO  com.example.rs.control.A - 邮件发送成功
+2022-03-03 11:59:13.110 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 11:59:13.636 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 11:59:54.919 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 12656 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 11:59:54.920 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 11:59:54.940 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 11:59:56.239 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 11:59:56.242 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 11:59:56.283 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2022-03-03 12:00:01.558 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 12:00:01.649 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#6aff97d6:0/SimpleConnection@716e6fa5 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64606]
+2022-03-03 12:00:01.732 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 7.471 seconds (JVM running for 9.165)
+2022-03-03 12:00:05.480 [main] INFO  com.example.rs.control.A - 邮件发送成功
+2022-03-03 12:00:05.505 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 12:00:05.765 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 12:02:01.887 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 6152 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 12:02:01.889 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 12:02:01.897 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 12:02:03.031 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 12:02:03.037 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 12:02:03.074 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2022-03-03 12:02:07.718 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 12:02:07.805 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#44fd7ba4:0/SimpleConnection@328e50eb [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64654]
+2022-03-03 12:02:07.888 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 6.555 seconds (JVM running for 8.226)
+2022-03-03 12:02:11.773 [main] INFO  com.example.rs.control.A - 邮件发送成功
+2022-03-03 12:02:11.798 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 12:02:11.899 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 12:09:11.927 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 19668 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 12:09:11.930 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 12:09:11.927 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 12:09:12.046 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-03 12:09:12.047 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-03 12:09:13.750 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 12:09:13.751 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 12:09:13.802 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-03-03 12:09:15.879 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-03 12:09:15.899 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-03 12:09:15.901 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-03 12:09:15.902 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-03 12:09:16.046 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-03 12:09:16.047 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3999 ms
+2022-03-03 12:09:16.192 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-03 12:09:20.187 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-03 12:09:20.280 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-03 12:09:20.332 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 12:09:20.336 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 12:09:20.485 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1197ffbf:0/SimpleConnection@15a76944 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 65040]
+2022-03-03 12:09:20.637 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 9.729 seconds (JVM running for 10.922)
+2022-03-03 12:10:34.525 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-03 12:10:34.526 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-03 12:10:34.527 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-03-03 12:10:34.538 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 12:10:34.586 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 12:10:34.586 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 12:10:34.587 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 12:10:34.588 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@68572d67
+2022-03-03 12:10:34.590 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 12:10:34.790 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 12:10:35.074 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:21.095 [http-nio-8080-exec-9] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:21.105 [http-nio-8080-exec-9] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:23:21.106 [http-nio-8080-exec-9] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:23:21.106 [http-nio-8080-exec-9] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:23:21.106 [http-nio-8080-exec-9] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@180b8155
+2022-03-03 14:23:21.106 [http-nio-8080-exec-9] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:23:21.118 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:23:22.067 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:25.304 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:25.305 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:23:25.305 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:23:25.305 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:23:25.306 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@497c8634
+2022-03-03 14:23:25.306 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:23:25.308 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:23:26.401 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:26.402 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:23:26.402 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:23:26.402 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:23:26.402 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@445b9732
+2022-03-03 14:23:26.402 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:23:26.407 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:23:26.917 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:26.918 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:23:26.918 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:23:26.918 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:23:26.919 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@530eabe1
+2022-03-03 14:23:26.919 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:23:26.921 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:23:27.574 [http-nio-8080-exec-10] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:27.575 [http-nio-8080-exec-10] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:23:27.575 [http-nio-8080-exec-10] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:23:27.576 [http-nio-8080-exec-10] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:23:27.576 [http-nio-8080-exec-10] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@7bdae01e
+2022-03-03 14:23:27.576 [http-nio-8080-exec-10] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:23:27.579 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:23:28.187 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:28.189 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:23:28.189 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:23:28.189 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:23:28.189 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@59fc8d88
+2022-03-03 14:23:28.189 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:23:28.191 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:23:36.199 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:23:36.200 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:23:36.201 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:23:36.201 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:23:36.201 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@3e52a132
+2022-03-03 14:23:36.202 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:23:36.202 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:26:28.289 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 14:26:29.248 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 14:26:29.262 [Thread-5] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-03 14:26:29.436 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 19668 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 14:26:29.439 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 14:26:29.812 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 14:26:29.812 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 14:26:29.821 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2022-03-03 14:26:30.104 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-03 14:26:30.106 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-03 14:26:30.106 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-03 14:26:30.106 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-03 14:26:30.133 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-03 14:26:30.133 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 689 ms
+2022-03-03 14:26:30.160 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-03 14:26:31.118 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-03 14:26:31.128 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-03 14:26:31.131 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 14:26:31.132 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 14:26:31.138 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4eb244e4:0/SimpleConnection@79565142 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 55611]
+2022-03-03 14:26:31.167 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 1.792 seconds (JVM running for 8241.465)
+2022-03-03 14:26:31.169 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2022-03-03 14:26:31.277 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 14:26:32.164 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 14:26:32.173 [SpringApplicationShutdownHook] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-03 14:26:34.708 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 14:26:34.711 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 1720 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 14:26:34.712 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 14:26:34.788 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-03 14:26:34.789 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-03 14:26:35.677 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 14:26:35.683 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 14:26:35.714 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2022-03-03 14:26:36.859 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-03 14:26:36.871 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-03 14:26:36.872 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-03 14:26:36.872 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-03 14:26:36.958 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-03 14:26:36.958 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2168 ms
+2022-03-03 14:26:37.039 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-03 14:26:39.261 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-03 14:26:39.307 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-03 14:26:39.328 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 14:26:39.328 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 14:26:39.382 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#9ddb298:0/SimpleConnection@61c1bc21 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 55617]
+2022-03-03 14:26:39.453 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 5.378 seconds (JVM running for 6.067)
+2022-03-03 14:26:42.616 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-03 14:26:42.616 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-03 14:26:42.619 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-03-03 14:26:42.639 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:26:42.700 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:26:42.700 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:26:42.700 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:26:42.700 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@67bace1c
+2022-03-03 14:26:42.704 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:26:42.881 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 费时: 180
+2022-03-03 14:26:42.968 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:26:48.417 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:26:48.418 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:26:48.419 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:26:48.419 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:26:48.419 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@5149978b
+2022-03-03 14:26:48.420 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:26:48.421 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 费时: 3
+2022-03-03 14:26:48.424 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:26:50.186 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:26:50.187 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:26:50.188 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:26:50.188 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:26:50.188 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@445b9732
+2022-03-03 14:26:50.188 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:26:50.190 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 费时: 3
+2022-03-03 14:26:50.192 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:26:50.384 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:26:50.386 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:26:50.386 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:26:50.386 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:26:50.386 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@530eabe1
+2022-03-03 14:26:50.386 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:26:50.387 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 费时: 2
+2022-03-03 14:26:50.387 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:26:50.539 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:26:50.541 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:26:50.542 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:26:50.542 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:26:50.542 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@36d2a83e
+2022-03-03 14:26:50.542 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:26:50.543 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 费时: 2
+2022-03-03 14:26:50.543 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:26:50.704 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:26:50.705 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:26:50.705 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:26:50.705 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:26:50.705 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@180b8155
+2022-03-03 14:26:50.705 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:26:50.706 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 费时: 1
+2022-03-03 14:26:50.709 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:26:50.864 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:26:50.866 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:26:50.867 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:26:50.867 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:26:50.867 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@7bdae01e
+2022-03-03 14:26:50.867 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:26:50.868 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 费时: 2
+2022-03-03 14:26:50.870 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:29:22.728 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 14:29:23.003 [Thread-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 14:29:23.017 [Thread-5] INFO  com.example.rs.control.A - 默认过滤器已销毁.
+2022-03-03 14:29:23.191 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 1720 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 14:29:23.192 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 14:29:23.586 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 14:29:23.588 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 14:29:23.593 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-03-03 14:29:23.699 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+2022-03-03 14:29:23.706 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-03 14:29:23.739 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.example.rs.RsApplication.main(RsApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.bindExplicitArguments(AbstractAspectJAdvice.java:495)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.bindArgumentsByName(AbstractAspectJAdvice.java:435)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.calculateArgumentBindings(AbstractAspectJAdvice.java:386)
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvice(ReflectiveAspectJAdvisorFactory.java:309)
+	at org.springframework.aop.aspectj.annotation.InstantiationModelAwarePointcutAdvisorImpl.instantiateAdvice(InstantiationModelAwarePointcutAdvisorImpl.java:149)
+	at org.springframework.aop.aspectj.annotation.InstantiationModelAwarePointcutAdvisorImpl.<init>(InstantiationModelAwarePointcutAdvisorImpl.java:113)
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvisor(ReflectiveAspectJAdvisorFactory.java:213)
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvisors(ReflectiveAspectJAdvisorFactory.java:144)
+	at org.springframework.aop.aspectj.annotation.BeanFactoryAspectJAdvisorsBuilder.buildAspectJAdvisors(BeanFactoryAspectJAdvisorsBuilder.java:110)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:95)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 40 common frames omitted
+2022-03-03 14:29:27.576 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 14:29:27.578 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 11768 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 14:29:27.579 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 14:29:27.651 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-03 14:29:27.651 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-03 14:29:28.638 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 14:29:28.643 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 14:29:28.670 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-03-03 14:29:29.053 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+2022-03-03 14:29:29.061 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-03 14:29:29.092 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.example.rs.RsApplication.main(RsApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Throwing argument name 'ex' was not bound in advice arguments
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.bindExplicitArguments(AbstractAspectJAdvice.java:495)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.bindArgumentsByName(AbstractAspectJAdvice.java:435)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.calculateArgumentBindings(AbstractAspectJAdvice.java:386)
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvice(ReflectiveAspectJAdvisorFactory.java:309)
+	at org.springframework.aop.aspectj.annotation.InstantiationModelAwarePointcutAdvisorImpl.instantiateAdvice(InstantiationModelAwarePointcutAdvisorImpl.java:149)
+	at org.springframework.aop.aspectj.annotation.InstantiationModelAwarePointcutAdvisorImpl.<init>(InstantiationModelAwarePointcutAdvisorImpl.java:113)
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvisor(ReflectiveAspectJAdvisorFactory.java:213)
+	at org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory.getAdvisors(ReflectiveAspectJAdvisorFactory.java:144)
+	at org.springframework.aop.aspectj.annotation.BeanFactoryAspectJAdvisorsBuilder.buildAspectJAdvisors(BeanFactoryAspectJAdvisorsBuilder.java:110)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:95)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 40 common frames omitted
+2022-03-03 14:29:55.253 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-03-03 14:29:55.258 [restartedMain] INFO  com.example.rs.RsApplication - Starting RsApplication using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 16720 (C:\Users\hzh\IdeaProjects\rs\target\classes started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-03-03 14:29:55.259 [restartedMain] INFO  com.example.rs.RsApplication - No active profile set, falling back to 1 default profile: "default"
+2022-03-03 14:29:55.335 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-03 14:29:55.335 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-03 14:29:56.245 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-03 14:29:56.249 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-03 14:29:56.275 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-03-03 14:29:57.390 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-03-03 14:29:57.402 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-03 14:29:57.402 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-03-03 14:29:57.402 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-03 14:29:57.485 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-03-03 14:29:57.485 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2149 ms
+2022-03-03 14:29:57.574 [restartedMain] INFO  com.example.rs.control.A - 默认过滤器已启用.
+2022-03-03 14:29:59.776 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-03-03 14:29:59.820 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-03-03 14:29:59.842 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 14:29:59.844 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-03-03 14:29:59.898 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#9ddb298:0/SimpleConnection@47568bf3 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 55669]
+2022-03-03 14:29:59.955 [restartedMain] INFO  com.example.rs.RsApplication - Started RsApplication in 5.237 seconds (JVM running for 5.917)
+2022-03-03 14:30:12.104 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-03 14:30:12.104 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-03 14:30:12.105 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-03-03 14:30:12.115 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:12.163 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:12.163 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:12.164 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:12.165 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@5a9471f5
+2022-03-03 14:30:12.166 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:12.252 [http-nio-8080-exec-2] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:12.255 [http-nio-8080-exec-2] INFO  com.example.rs.control.A - 费时: 92
+2022-03-03 14:30:12.308 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:30:18.471 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:18.472 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:18.472 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:18.478 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:18.478 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@5149978b
+2022-03-03 14:30:18.478 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:18.480 [http-nio-8080-exec-1] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:18.480 [http-nio-8080-exec-1] INFO  com.example.rs.control.A - 费时: 8
+2022-03-03 14:30:18.482 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:30:23.245 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:23.246 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:23.247 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:23.247 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:23.247 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@530eabe1
+2022-03-03 14:30:23.247 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:23.249 [http-nio-8080-exec-3] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:23.250 [http-nio-8080-exec-3] INFO  com.example.rs.control.A - 费时: 4
+2022-03-03 14:30:23.252 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:30:24.444 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:24.446 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:24.446 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:24.446 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:24.447 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@36d2a83e
+2022-03-03 14:30:24.447 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:24.448 [http-nio-8080-exec-4] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:24.448 [http-nio-8080-exec-4] INFO  com.example.rs.control.A - 费时: 2
+2022-03-03 14:30:24.451 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:30:25.606 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:25.608 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:25.609 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:25.609 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:25.609 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@180b8155
+2022-03-03 14:30:25.609 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:25.610 [http-nio-8080-exec-5] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:25.610 [http-nio-8080-exec-5] INFO  com.example.rs.control.A - 费时: 2
+2022-03-03 14:30:25.611 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:30:25.938 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:25.938 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:25.938 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:25.938 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:25.939 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@7bdae01e
+2022-03-03 14:30:25.939 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:25.939 [http-nio-8080-exec-6] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:25.939 [http-nio-8080-exec-6] INFO  com.example.rs.control.A - 费时: 1
+2022-03-03 14:30:25.940 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:30:26.099 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:26.100 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:26.102 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:26.102 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:26.102 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@3642ebd
+2022-03-03 14:30:26.102 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:26.103 [http-nio-8080-exec-7] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:26.104 [http-nio-8080-exec-7] INFO  com.example.rs.control.A - 费时: 4
+2022-03-03 14:30:26.104 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 14:30:26.241 [http-nio-8080-exec-8] INFO  com.example.rs.control.A - 拦截了一次请求
+2022-03-03 14:30:26.242 [http-nio-8080-exec-8] INFO  com.example.rs.control.A - 一个HTTP请求被成功接收(http://127.0.0.1:8080/a)
+2022-03-03 14:30:26.242 [http-nio-8080-exec-8] INFO  com.example.rs.control.A - 查询参数: null
+2022-03-03 14:30:26.242 [http-nio-8080-exec-8] INFO  com.example.rs.control.A - IP地址: 127.0.0.1
+2022-03-03 14:30:26.243 [http-nio-8080-exec-8] INFO  com.example.rs.control.A - Cookies: [Ljavax.servlet.http.Cookie;@4307b851
+2022-03-03 14:30:26.243 [http-nio-8080-exec-8] INFO  com.example.rs.control.A - 类所属方法: a
+2022-03-03 14:30:26.243 [http-nio-8080-exec-8] ERROR com.example.rs.control.A - 执行异常: a.a: 不能为null, a.b: 不能为空
+2022-03-03 14:30:26.243 [http-nio-8080-exec-8] INFO  com.example.rs.control.A - 费时: 1
+2022-03-03 14:30:26.244 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [javax.validation.ConstraintViolationException: a.a: 不能为null, a.b: 不能为空]
+2022-03-03 17:21:03.422 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-03-03 17:21:04.362 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-03-03 17:21:04.380 [SpringApplicationShutdownHook] INFO  com.example.rs.control.A - 默认过滤器已销毁.

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<!--MyBatis 真正的力量是在映射语句中。这里是奇迹发生的地方。
+    对于所有的力量,SQL 映射的 XML 文件是相当的简单。
+    当然如果你将它们和对等功能的 JDBC 代码来比较,你会发现映射文件节省了大约 95%的代码量。
+    MyBatis 的构建就是聚焦于 SQL 的,使其远离于普通的方式。
+-->
+
+<!--namespace为全限定名，使用该映射文件中配置的已映射的sql语句时，最好加上全限定名，不然可能会造成语句模糊。-->
+<mapper namespace="com.example.rs.dao.AccountMapper">
+
+    <resultMap id="Account" type="Account">
+        <id property="id" column="id"></id>
+        <association select="com.example.rs.dao.ResourceMapper.getResourcesByAccountId"
+                     property="resources"
+                     column="id"
+                     fetchType="lazy">
+        </association>
+    </resultMap>
+
+
+    <select id="getAllAccounts" resultMap="Account">
+        select * from `account`
+    </select>
+
+    <select id="getAccountById" parameterType="String"  resultMap="Account">
+        select * from `account` where `account`.`id` = #{account}
+    </select>
+
+    <insert id="insertAccount" parameterType="Account">
+        insert into account
+        values (null, #{account}, #{password}, #{name}, #{sessionId})
+    </insert>
+
+    <delete id="deleteAccount" parameterType="Account">
+        DELETE FROM `account`
+        WHERE `account`.`account` = #{account}
+    </delete>
+</mapper>

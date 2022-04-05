@@ -1,0 +1,69 @@
+2022-04-04 15:49:13.150 [main] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/hzh/.m2/repository/org/json/json/20211205/json-20211205.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/hzh/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2022-04-04 15:49:13.172 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 11404 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-04-04 15:49:13.173 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 15:49:13.184 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-04-04 15:49:14.612 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-04 15:49:14.617 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-04 15:49:14.669 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2022-04-04 15:49:16.481 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:49:17.941 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:49:17.941 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:49:21.497 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-04-04 15:49:21.953 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1736c1e4:0/SimpleConnection@6033f36c [delegate=amqp://guest@127.0.0.1:5672/, localPort= 52479]
+2022-04-04 15:49:22.119 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 9.562 seconds (JVM running for 11.158)
+2022-04-04 15:49:22.953 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-04-04 15:49:23.115 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-04-04 15:51:09.359 [main] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/hzh/.m2/repository/org/json/json/20211205/json-20211205.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/hzh/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2022-04-04 15:51:09.384 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 15596 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-04-04 15:51:09.386 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 15:51:09.398 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-04-04 15:51:10.623 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-04 15:51:10.627 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-04 15:51:10.662 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2022-04-04 15:51:11.663 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:51:12.967 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:51:12.968 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:51:14.473 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-04-04 15:51:14.537 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#46ea78f0:0/SimpleConnection@34d72f06 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 51824]
+2022-04-04 15:51:14.603 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 5.754 seconds (JVM running for 7.145)
+2022-04-04 15:51:16.781 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-04-04 15:51:17.597 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-04-04 15:52:24.137 [main] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/hzh/.m2/repository/org/json/json/20211205/json-20211205.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/hzh/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2022-04-04 15:52:24.153 [main] INFO  com.example.rs.RsApplicationTests - Starting RsApplicationTests using Java 16.0.2 on LAPTOP-8C2MLJEM with PID 18128 (started by hzh in C:\Users\hzh\IdeaProjects\rs)
+2022-04-04 15:52:24.153 [main] INFO  com.example.rs.RsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 15:52:24.164 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.2.Final
+2022-04-04 15:52:24.981 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-04 15:52:24.985 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-04 15:52:25.013 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-04-04 15:52:26.091 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:52:27.604 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:52:27.605 [Finalizer] WARN  io.lettuce.core.resource.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2022-04-04 15:52:29.064 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+2022-04-04 15:52:29.131 [main] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1736c1e4:0/SimpleConnection@6033f36c [delegate=amqp://guest@127.0.0.1:5672/, localPort= 51961]
+2022-04-04 15:52:29.215 [main] INFO  com.example.rs.RsApplicationTests - Started RsApplicationTests in 5.46 seconds (JVM running for 6.634)
+2022-04-04 15:52:31.160 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-04-04 15:52:31.221 [SpringApplicationShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
