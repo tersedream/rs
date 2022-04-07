@@ -24,7 +24,7 @@ public class TestControl {
     }
     @GetMapping("/c")
     public String c() {
-        System.err.println("进入了订单信息管理");
+        System.err.println("进入了订单信息管理d");
         return "订单信息管理";
     }
 }
