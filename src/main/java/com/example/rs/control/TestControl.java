@@ -1,14 +1,21 @@
 package com.example.rs.control;
 
+import com.example.rs.entity.Resource;
+import com.example.rs.service.inf.ResourceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class TestControl {
+    @Autowired
+    ResourceService resourceService;
+
     @GetMapping("/a")
-    public String a() {
-        System.err.println("进入了购物车");
-        return "购物车";
+    public List<Resource> a() {
+        return resourceService.getAllResources();
     }
     @GetMapping("/b")
     public String b() {
